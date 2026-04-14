@@ -2,7 +2,7 @@
 ### Requirements & scale estimates
 
 **Document status:** Draft v0.1  
-**Author:** TBD  
+**Author:** Rohan Deoli  
 **Last updated:** April 2026  
 **Reviewers:** TBD
 
