@@ -1,0 +1,223 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram id="observability-hld" name="HLD — AI Observability Platform">
+    <mxGraphModel dx="1768" dy="1063" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lbl-sources" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#888780;fontStyle=1;rotation=-90;" value="SOURCES" vertex="1">
+          <mxGeometry height="20" width="80" x="20" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-collect" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#888780;fontStyle=1;rotation=-90;" value="COLLECTION" vertex="1">
+          <mxGeometry height="20" width="80" x="20" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-stream" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#888780;fontStyle=1;rotation=-90;" value="STREAMING" vertex="1">
+          <mxGeometry height="20" width="80" x="20" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-storage" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#888780;fontStyle=1;rotation=-90;" value="STORAGE" vertex="1">
+          <mxGeometry height="20" width="80" x="20" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-backend" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#888780;fontStyle=1;rotation=-90;" value="API / BACKEND" vertex="1">
+          <mxGeometry height="20" width="80" x="20" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-frontend" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#888780;fontStyle=1;rotation=-90;" value="FRONTEND" vertex="1">
+          <mxGeometry height="20" width="80" x="20" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="div-line" parent="1" style="line;strokeColor=#B4B2A9;strokeWidth=1;dashed=1;" value="" vertex="1">
+          <mxGeometry height="940" width="2" x="55" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="src-spring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;Spring Boot services&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Logs · metrics · traces&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="70" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="src-k8s" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;Kubernetes workloads&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Pods · jobs · deployments&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="270" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="src-aws" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;AWS / GCP infra&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;CloudWatch · Cloud Logging&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="470" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="src-nextjs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;Next.js UI&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Browser traces&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="670" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tip-src-spring" parent="1" style="text;html=1;strokeColor=none;fillColor=none;" tooltip="Emits structured JSON logs to stdout, exposes /actuator/prometheus for metrics, and instruments traces via OTel Java agent." value="Emits structured JSON logs to stdout, exposes /actuator/prometheus for metrics, and instruments traces via OTel Java agent. Every log line carries tenant_id, trace_id, span_id, and correlation_id in the MDC." vertex="1">
+          <mxGeometry height="60" width="180" x="67.5" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="col-agent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#1D9E75;strokeWidth=1;fontColor=#085041;fontSize=12;arcSize=8;" value="&lt;b&gt;Log agent&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;K8s DaemonSet · Fluent Bit&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Local disk buffer · backpressure&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="70" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="col-prom" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#1D9E75;strokeWidth=1;fontColor=#085041;fontSize=12;arcSize=8;" value="&lt;b&gt;Metric exporter&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Prometheus scrape&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Spring Actuator · Node Exporter&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="270" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="col-otel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#1D9E75;strokeWidth=1;fontColor=#085041;fontSize=12;arcSize=8;" value="&lt;b&gt;OTel SDK / agent&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Java auto-instrument · otel-js&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;W3C context propagation&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="470" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka-container" parent="1" style="swimlane;startSize=30;fillColor=#FAECE7;strokeColor=#D85A30;strokeWidth=1;fontColor=#4A1B0C;fontSize=10;fontStyle=1;dashed=1;arcSize=4;" value="KAFKA — shared topics, replication factor=3, 12 partitions each, partition key: hash(tenant_id + service_name)" vertex="1">
+          <mxGeometry height="130" width="740" x="70" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka-logs" parent="kafka-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#D85A30;strokeWidth=1;fontColor=#4A1B0C;fontSize=12;arcSize=8;" value="&lt;b&gt;logs-raw&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;tenant_id in header&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;JSON · lz4 compressed&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka-metrics" parent="kafka-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#D85A30;strokeWidth=1;fontColor=#4A1B0C;fontSize=12;arcSize=8;" value="&lt;b&gt;metrics-raw&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;tenant_id in header&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Prometheus or Avro&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="270" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka-traces" parent="kafka-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#D85A30;strokeWidth=1;fontColor=#4A1B0C;fontSize=12;arcSize=8;" value="&lt;b&gt;traces-raw&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;tenant_id in header&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;OTLP protobuf&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="520" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="stream-proc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAECE7;strokeColor=#D85A30;strokeWidth=1.5;fontColor=#4A1B0C;fontSize=12;arcSize=8;" value="&lt;b&gt;Stream processor&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Parse · enrich · normalise · validate tenant_id · write to storage&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Python (Faust / Bytewax) · exactly-once semantics&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="500" x="70" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="dead-letter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;dashed=1;" value="&lt;b&gt;Dead-letter topic&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Bad tenant_id · parse fail&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Monitored · alerted on&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="590" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="store-ch" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F1FB;strokeColor=#378ADD;strokeWidth=1;fontColor=#0C447C;fontSize=12;arcSize=8;" value="&lt;b&gt;ClickHouse&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Logs · shared table (ADR-001)&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PARTITION BY (tenant_id, month)&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;TTL 30 days · MergeTree&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="210" x="70" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="store-vm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F1FB;strokeColor=#378ADD;strokeWidth=1;fontColor=#0C447C;fontSize=12;arcSize=8;" value="&lt;b&gt;VictoriaMetrics&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Metrics · 90d retention&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PromQL compatible&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;100k active series&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="210" x="300" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="store-tempo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F1FB;strokeColor=#378ADD;strokeWidth=1;fontColor=#0C447C;fontSize=12;arcSize=8;" value="&lt;b&gt;Grafana Tempo&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Traces · S3 backend (ADR-003)&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;7d retention · TraceQL&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Bloom filter trace_id index&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="210" x="530" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="store-redis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F1FB;strokeColor=#378ADD;strokeWidth=1;fontColor=#0C447C;fontSize=12;arcSize=8;" value="&lt;b&gt;Redis&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Quota · pub/sub · live-tail&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Alert state · query cache&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="200" x="70" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="store-pgvec" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F1FB;strokeColor=#378ADD;strokeWidth=1;fontColor=#0C447C;fontSize=12;arcSize=8;" value="&lt;b&gt;pgvector&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Log embeddings · ANN search&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;AI clustering index&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="200" x="290" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-container" parent="1" style="swimlane;startSize=30;fillColor=#FAEEDA;strokeColor=#EF9F27;strokeWidth=1;fontColor=#633806;fontSize=10;fontStyle=1;dashed=1;arcSize=4;" value="AI SERVICE (Python · FastAPI)" vertex="1">
+          <mxGeometry height="460" width="200" x="780" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-nlsql" parent="ai-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#EF9F27;strokeWidth=1;fontColor=#633806;fontSize=12;arcSize=8;" value="&lt;b&gt;NL → SQL&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;LLM · few-shot prompting&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;ClickHouse query gen&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="170" x="15" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-anomaly" parent="ai-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#EF9F27;strokeWidth=1;fontColor=#633806;fontSize=12;arcSize=8;" value="&lt;b&gt;Anomaly detector&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Prophet · ARIMA&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Feeds alert engine&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="170" x="15" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-rca" parent="ai-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#EF9F27;strokeWidth=1;fontColor=#633806;fontSize=12;arcSize=8;" value="&lt;b&gt;Root cause analyser&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;LLM · multi-signal correlate&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Structured RCA report&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="170" x="15" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-cluster" parent="ai-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#EF9F27;strokeWidth=1;fontColor=#633806;fontSize=12;arcSize=8;" value="&lt;b&gt;Log clustering&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;sentence-transformers&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;HDBSCAN · pgvector&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="170" x="15" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-responder" parent="ai-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#EF9F27;strokeWidth=1;fontColor=#633806;fontSize=12;arcSize=8;dashed=1;" value="&lt;b&gt;Incident responder (v2)&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Agentic loop · tool use&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Slack · PagerDuty&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="170" x="15" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="be-gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#7F77DD;strokeWidth=1.5;fontColor=#3C3489;fontSize=12;arcSize=8;" value="&lt;b&gt;Spring Boot API gateway&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;JWT auth · tenant_id + role claims · RBAC&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;REST + WebSocket · routes to ClickHouse / VM / Tempo&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Rate limiting · QueryBuilder (ADR-001 enforcement)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="330" x="70" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="be-alert" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#7F77DD;strokeWidth=1;fontColor=#3C3489;fontSize=12;arcSize=8;" value="&lt;b&gt;Alert engine&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Quartz scheduler · 30s eval&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Threshold · anomaly rules&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Redis deduplication&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="190" x="420" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="be-notify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#7F77DD;strokeWidth=1;fontColor=#3C3489;fontSize=12;arcSize=8;" value="&lt;b&gt;Notify service&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Slack · email · PagerDuty&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Retry · backoff&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Idempotency keys&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="140" x="630" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-logs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBEAF0;strokeColor=#D4537E;strokeWidth=1;fontColor=#72243E;fontSize=12;arcSize=8;" value="&lt;b&gt;Log explorer&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Full-text search · live tail&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;WebSocket · virtual scroll&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="175" x="70" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-dash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBEAF0;strokeColor=#D4537E;strokeWidth=1;fontColor=#72243E;fontSize=12;arcSize=8;" value="&lt;b&gt;Metric dashboards&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Recharts · D3 · SSE&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Drag-and-drop panels&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="175" x="260" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-trace" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBEAF0;strokeColor=#D4537E;strokeWidth=1;fontColor=#72243E;fontSize=12;arcSize=8;" value="&lt;b&gt;Trace viewer&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Gantt / waterfall · D3&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Span attributes · error highlight&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="175" x="450" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-copilot" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBEAF0;strokeColor=#D4537E;strokeWidth=1;fontColor=#72243E;fontSize=12;arcSize=8;" value="&lt;b&gt;AI copilot chat&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;SSE token streaming&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;NL queries · RCA display&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="175" x="640" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="cp-container" parent="1" style="swimlane;startSize=25;fillColor=#F1EFE8;strokeColor=#B4B2A9;strokeWidth=1;fontColor=#444441;fontSize=10;fontStyle=1;dashed=1;arcSize=4;" value="MULTI-TENANT CONTROL PLANE" vertex="1">
+          <mxGeometry height="80" width="890" x="70" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="cp-auth" parent="cp-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D3D1C7;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;Auth · JWT · RBAC&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;tenant_id + role in token&lt;/font&gt;" vertex="1">
+          <mxGeometry height="36" width="190" x="15" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cp-quota" parent="cp-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D3D1C7;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;Quota enforcement&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Redis INCR · HTTP 429 at ingestion&lt;/font&gt;" vertex="1">
+          <mxGeometry height="36" width="190" x="225" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cp-prov" parent="cp-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D3D1C7;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;Tenant provisioning&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Manual v1 · self-serve v2&lt;/font&gt;" vertex="1">
+          <mxGeometry height="36" width="190" x="435" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cp-audit" parent="cp-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D3D1C7;strokeColor=#888780;strokeWidth=1;fontColor=#444441;fontSize=12;arcSize=8;" value="&lt;b&gt;Audit logging&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Platform-level events · immutable&lt;/font&gt;" vertex="1">
+          <mxGeometry height="36" width="190" x="645" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-spring-agent" edge="1" parent="1" source="src-spring" style="edgeStyle=orthogonalEdgeStyle;" target="col-agent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-k8s-prom" edge="1" parent="1" source="src-k8s" style="edgeStyle=orthogonalEdgeStyle;" target="col-prom">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-aws-otel" edge="1" parent="1" source="src-aws" style="edgeStyle=orthogonalEdgeStyle;" target="col-otel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-nextjs-otel" edge="1" parent="1" source="src-nextjs" style="edgeStyle=orthogonalEdgeStyle;" target="col-otel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-spring-otel" edge="1" parent="1" source="src-spring" style="edgeStyle=orthogonalEdgeStyle;" target="col-otel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-agent-logs" edge="1" parent="1" source="col-agent" style="edgeStyle=orthogonalEdgeStyle;" target="kafka-logs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-prom-metrics" edge="1" parent="1" source="col-prom" style="edgeStyle=orthogonalEdgeStyle;" target="kafka-metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-otel-traces" edge="1" parent="1" source="col-otel" style="edgeStyle=orthogonalEdgeStyle;" target="kafka-traces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-logs-proc" edge="1" parent="1" source="kafka-logs" style="edgeStyle=orthogonalEdgeStyle;" target="stream-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-metrics-proc" edge="1" parent="1" source="kafka-metrics" style="edgeStyle=orthogonalEdgeStyle;" target="stream-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-traces-proc" edge="1" parent="1" source="kafka-traces" style="edgeStyle=orthogonalEdgeStyle;" target="stream-proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-proc-dlq" edge="1" parent="1" source="stream-proc" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;fontSize=10;" target="dead-letter" value="bad msg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-proc-ch" edge="1" parent="1" source="stream-proc" style="edgeStyle=orthogonalEdgeStyle;" target="store-ch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-proc-vm" edge="1" parent="1" source="stream-proc" style="edgeStyle=orthogonalEdgeStyle;" target="store-vm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-proc-tempo" edge="1" parent="1" source="stream-proc" style="edgeStyle=orthogonalEdgeStyle;" target="store-tempo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ch-gw" edge="1" parent="1" source="store-ch" style="edgeStyle=orthogonalEdgeStyle;" target="be-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-vm-gw" edge="1" parent="1" source="store-vm" style="edgeStyle=orthogonalEdgeStyle;" target="be-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-tempo-gw" edge="1" parent="1" source="store-tempo" style="edgeStyle=orthogonalEdgeStyle;" target="be-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-redis-gw" edge="1" parent="1" source="store-redis" style="edgeStyle=orthogonalEdgeStyle;" target="be-gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-vm-alert" edge="1" parent="1" source="store-vm" style="edgeStyle=orthogonalEdgeStyle;" target="be-alert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-alert-notify" edge="1" parent="1" source="be-alert" style="edgeStyle=orthogonalEdgeStyle;" target="be-notify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-ai" edge="1" parent="1" source="be-gateway" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=block;startArrow=block;fontSize=10;" target="ai-container" value="on demand">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ai-pgvec" edge="1" parent="1" source="ai-container" style="edgeStyle=orthogonalEdgeStyle;dashed=1;fontSize=10;" target="store-pgvec" value="embeddings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-logs" edge="1" parent="1" source="be-gateway" style="edgeStyle=orthogonalEdgeStyle;" target="fe-logs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-dash" edge="1" parent="1" source="be-gateway" style="edgeStyle=orthogonalEdgeStyle;" target="fe-dash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-trace" edge="1" parent="1" source="be-gateway" style="edgeStyle=orthogonalEdgeStyle;" target="fe-trace">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-gw-copilot" edge="1" parent="1" source="be-gateway" style="edgeStyle=orthogonalEdgeStyle;" target="fe-copilot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
